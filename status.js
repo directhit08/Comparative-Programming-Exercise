@@ -1,20 +1,11 @@
-import java.util.Scanner;
+const readline = require('readline-sync');
 
-public class RegistrationChecker {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+const name = readline.question("Enter student name: ");
+const units = parseInt(readline.question("Enter number of registered units: "));
 
-        System.out.print("Enter student name: ");
-        String name = input.nextLine();
+const status = units > 7 ? "Overload - Approval Required" : "Registration Accepted";
 
-        System.out.print("Enter number of registered units: ");
-        int units = input.nextInt();
-
-        String status = (units > 7) ? "Overload - Approval Required" : "Registration Accepted";
-
-        System.out.println("\n--- Final Summary ---");
-        System.out.println("Student Name: " + name);
-        System.out.println("Units: " + units);
-        System.out.println("Status: " + status);
-    }
-}
+console.log("\n--- Final Summary ---");
+console.log(`Student Name: ${name}`);
+console.log(`Units: ${units}`);
+console.log(`Status: ${status}`);
